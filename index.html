@@ -1,10 +1,87 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="retro.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
     <title>ZacAttack</title>
   </head>
   <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+
+    <!-- ============ HEADER / NAV ============ -->
+    <header class="site-header">
+      <div class="site-title-block">
+        <a href="index.html" class="site-title">ZacAttack</a>
+        <p class="site-tagline">ART / DESIGN / PHOTOGRAPHY</p>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">HOME</a>
+        <a href="#work">WORK</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
+
+    <!-- ============ MAIN FEED ============ -->
+    <main id="work" class="feed">
+
+      <!-- =======================================================
+           ENTRY TEMPLATE — copy this whole <article> block to add
+           a new piece. Just swap the image src, tag, title, date,
+           and description text.
+           ======================================================= -->
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-tag">Digital Sculpture</span>
+          <span class="entry-date">Aug 06, 2026</span>
+        </div>
+        <h2 class="entry-title">Title of the Piece</h2>
+        <a class="entry-image-link" href="images/placeholder-1.jpg" target="_blank">
+          <img class="entry-image" src="images/placeholder-1.jpg" alt="Description of the artwork" />
+        </a>
+        <p class="entry-caption">Optional one-line caption or medium/date info goes here.</p>
+        <p class="entry-description">
+          This is where the longer description goes. Talk about the concept,
+          the process, the tools used, or anything else you want visitors
+          to know about this piece. Keep it as short or long as you like.
+        </p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-tag">Photography</span>
+          <span class="entry-date">Jul 20, 2026</span>
+        </div>
+        <h2 class="entry-title">Another Project Name</h2>
+        <a class="entry-image-link" href="images/placeholder-2.jpg" target="_blank">
+          <img class="entry-image" src="images/placeholder-2.jpg" alt="Description of the artwork" />
+        </a>
+        <p class="entry-caption">Shot on location, edited in-camera.</p>
+        <p class="entry-description">
+          Duplicate the <code>&lt;article class="entry"&gt;</code> block above
+          for every new post. Each one can have a different tag, image,
+          and description — nothing else needs to change.
+        </p>
+      </article>
+
+      <!-- Add more <article class="entry"> blocks here -->
+
+    </main>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>
+        A short bio goes here — who you are, what you make, and why.
+        Replace this paragraph with your own introduction.
+      </p>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer id="contact" class="site-footer">
+      <p>Get in touch: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p class="copyright">&copy; 2026 ZacAttack</p>
+    </footer>
+
   </body>
 </html>
