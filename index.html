@@ -1,9 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zac — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <a href="index.html" class="site-title">ZAC</a>
+    <p class="site-tagline">Design / Development / Photography</p>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="mailto:you@example.com">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ============ FEED ============ -->
+  <main class="feed" id="work">
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="entry-tag">Web Design</span>
+        <span class="entry-date">2026</span>
+      </div>
+      <h2 class="entry-title">Project One Title</h2>
+      <a href="#" class="entry-image-link">
+        <img src="images/project1.jpg" alt="Project One" class="entry-image">
+      </a>
+      <p class="entry-caption">Short caption for the image above.</p>
+      <p class="entry-description">
+        A brief description of the project — what it is, the tools or
+        techniques used, and what makes it worth showing.
+      </p>
+    </article>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="entry-tag">Photography</span>
+        <span class="entry-date">2025</span>
+      </div>
+      <h2 class="entry-title">Project Two Title</h2>
+      <a href="#" class="entry-image-link">
+        <img src="images/project2.jpg" alt="Project Two" class="entry-image">
+      </a>
+      <p class="entry-caption">Short caption for the image above.</p>
+      <p class="entry-description">
+        A brief description of the project — what it is, the tools or
+        techniques used, and what makes it worth showing.
+      </p>
+    </article>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="entry-tag">Development</span>
+        <span class="entry-date">2025</span>
+      </div>
+      <h2 class="entry-title">Project Three Title</h2>
+      <a href="#" class="entry-image-link">
+        <img src="images/project3.jpg" alt="Project Three" class="entry-image">
+      </a>
+      <p class="entry-caption">Short caption for the image above.</p>
+      <p class="entry-description">
+        A brief description of the project — what it is, the tools or
+        techniques used, and what makes it worth showing.
+      </p>
+    </article>
+
+  </main>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <h2>About</h2>
+    <p class="entry-description">
+      A short bio goes here — who you are, what you do, and what you're
+      looking for (freelance work, full-time roles, collaborations, etc).
+      Keep it to a couple of sentences; it sits below the fold on purpose.
+    </p>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="site-nav">
+      <a href="mailto:you@example.com">Email</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+    </div>
+    <p class="copyright">&copy; 2026 Zac. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
