@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zac — Portfolio</title>
+  <title>Illustration — Zac Wong</title>
   <link rel="stylesheet" href="style.css">
 
   <!-- ============ LIGHTBOX STYLES ============ -->
@@ -53,6 +53,16 @@
     .entry-image-link {
       cursor: zoom-in;
     }
+
+    .page-title {
+      margin-bottom: 0.25em;
+    }
+
+    .page-intro {
+      margin-top: 0;
+      margin-bottom: 2em;
+      opacity: 0.75;
+    }
   </style>
 </head>
 <body>
@@ -62,11 +72,11 @@
     <a href="index.html" class="site-title">Zac Wong</a>
     <p class="site-tagline">Design / Development / Illustration</p>
     <nav class="site-nav">
-      <a href="index.html" class="is-active">Home</a>
+      <a href="index.html">Home</a>
       <a href="3d-modeling.html">3D</a>
-      <a href="illustration.html">Illustration</a>
+      <a href="illustration.html" class="is-active">Illustration</a>
       <a href="development.html">Development</a>
-      <a href="#about">About</a>
+      <a href="index.html#about">About</a>
       <a href="mailto:wongzach2001@gmail.com">Contact</a>
     </nav>
   </header>
@@ -77,36 +87,12 @@
     <!-- ============ FEED ============ -->
     <main class="feed" id="work">
 
-      <article class="entry" id="skull-model">
-        <div class="entry-meta">
-          <a href="3d-modeling.html" class="entry-tag">3D Modeling</a>
-          <span class="entry-date">2026</span>
-        </div>
-        <h2 class="entry-title">Skull Model</h2>
-
-        <div class="entry-gallery">
-          <a href="#" class="entry-image-link" data-lightbox>
-            <img src="images/Skull 3D model front view.png" alt="Skull model, front view" class="entry-image">
-          </a>
-          <a href="#" class="entry-image-link" data-lightbox>
-            <img src="images/Skull Side View.png" alt="Skull model, side view" class="entry-image">
-          </a>
-          <a href="#" class="entry-image-link" data-lightbox>
-            <img src="images/Skull Top View.png.png" alt="Skull model, top view" class="entry-image">
-          </a>
-        </div>
-
-        <p class="entry-caption">A 3D model of a skull, made for a digital sculpting class.</p>
-        <p class="entry-description">
-          As part of a digital sculpting class, we were tasked with making a "traditional sculpt." I decided on a skull —
-          after working through Photoshop reference sheets and building the form in ZBrush, I completed the model.
-          Next step is prepping it for 3D printing.
-        </p>
-      </article>
+      <h1 class="page-title">Illustration</h1>
+      <p class="page-intro">Studies, sketches, and finished illustration work.</p>
 
       <article class="entry" id="studies-illustrations">
         <div class="entry-meta">
-          <a href="illustration.html" class="entry-tag">Illustration</a>
+          <span class="entry-tag">Illustration</span>
           <span class="entry-date">2025</span>
         </div>
         <h2 class="entry-title">Studies and Illustrations</h2>
@@ -124,34 +110,7 @@
         </p>
       </article>
 
-      <article class="entry" id="project-three">
-        <div class="entry-meta">
-          <a href="development.html" class="entry-tag">Development</a>
-          <span class="entry-date">2025</span>
-        </div>
-        <h2 class="entry-title">Project Three Title</h2>
-
-        <div class="entry-gallery">
-          <a href="#" class="entry-image-link" data-lightbox>
-            <img src="images/project3.jpg" alt="Project Three" class="entry-image">
-          </a>
-        </div>
-
-        <p class="entry-caption">Short caption for the image above.</p>
-        <p class="entry-description">
-          A brief description of the project — what it is, the tools or techniques used, and what makes it
-          worth showing.
-        </p>
-      </article>
-
-      <!-- ============ ABOUT ============ -->
-      <section class="about" id="about">
-        <h2>About</h2>
-        <p class="entry-description">
-          A short bio goes here — who you are, what you do, and what you're looking for
-          (freelance work, full-time roles, collaborations, etc). Keep it to a couple of sentences.
-        </p>
-      </section>
+      <!-- Add more illustration entries here as new <article class="entry"> blocks -->
 
     </main>
 
@@ -164,15 +123,6 @@
           <li><a href="3d-modeling.html">3D Modeling</a></li>
           <li><a href="illustration.html">Illustration</a></li>
           <li><a href="development.html">Development</a></li>
-        </ul>
-      </div>
-
-      <div class="widget">
-        <h3 class="widget-title">Recent Work</h3>
-        <ul class="widget-list">
-          <li><a href="#skull-model">Skull Model</a></li>
-          <li><a href="#studies-illustrations">Studies and Illustrations</a></li>
-          <li><a href="#project-three">Project Three Title</a></li>
         </ul>
       </div>
 
@@ -218,7 +168,7 @@
         overlayImage.src = src;
         overlayImage.alt = alt || '';
         overlay.classList.add('is-open');
-        document.body.style.overflow = 'hidden'; // prevent background scroll
+        document.body.style.overflow = 'hidden';
       }
 
       function closeLightbox() {
@@ -227,7 +177,6 @@
         document.body.style.overflow = '';
       }
 
-      // Attach click handlers to every image link marked with data-lightbox
       document.querySelectorAll('[data-lightbox]').forEach(function (link) {
         link.addEventListener('click', function (e) {
           e.preventDefault();
@@ -238,7 +187,6 @@
         });
       });
 
-      // Close when clicking the overlay background (not the image itself)
       overlay.addEventListener('click', function (e) {
         if (e.target === overlay) {
           closeLightbox();
@@ -247,7 +195,6 @@
 
       closeBtn.addEventListener('click', closeLightbox);
 
-      // Close on Escape key
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
           closeLightbox();
