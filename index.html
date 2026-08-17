@@ -5,6 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zac — Portfolio</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- ============ LIGHTBOX STYLES ============ -->
+  <style>
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+      cursor: zoom-out;
+    }
+
+    .lightbox-overlay.is-open {
+      display: flex;
+    }
+
+    .lightbox-image {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      cursor: default;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 2.5rem;
+      line-height: 1;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .lightbox-close:hover {
+      opacity: 0.7;
+    }
+
+    .entry-image-link {
+      cursor: zoom-in;
+    }
+  </style>
 </head>
 <body>
 
@@ -36,13 +85,13 @@
         <h2 class="entry-title">Skull Model</h2>
 
         <div class="entry-gallery">
-          <a href="#" class="entry-image-link">
+          <a href="#" class="entry-image-link" data-lightbox>
             <img src="images/Skull 3D model front view.png" alt="Skull model, front view" class="entry-image">
           </a>
-          <a href="#" class="entry-image-link">
+          <a href="#" class="entry-image-link" data-lightbox>
             <img src="images/Skull Side View.png" alt="Skull model, side view" class="entry-image">
           </a>
-          <a href="#" class="entry-image-link">
+          <a href="#" class="entry-image-link" data-lightbox>
             <img src="images/Skull Top View.png.png" alt="Skull model, top view" class="entry-image">
           </a>
         </div>
@@ -63,7 +112,7 @@
         <h2 class="entry-title">Studies and Illustrations</h2>
 
         <div class="entry-gallery">
-          <a href="#" class="entry-image-link">
+          <a href="#" class="entry-image-link" data-lightbox>
             <img src="images/project2.jpg" alt="Illustration study" class="entry-image">
           </a>
         </div>
@@ -83,7 +132,7 @@
         <h2 class="entry-title">Project Three Title</h2>
 
         <div class="entry-gallery">
-          <a href="#" class="entry-image-link">
+          <a href="#" class="entry-image-link" data-lightbox>
             <img src="images/project3.jpg" alt="Project Three" class="entry-image">
           </a>
         </div>
@@ -151,6 +200,61 @@
     </div>
     <p class="copyright">&copy; 2026 Zac Wong. All rights reserved.</p>
   </footer>
+
+  <!-- ============ LIGHTBOX MARKUP ============ -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox-image" id="lightbox-image" src="" alt="">
+  </div>
+
+  <!-- ============ LIGHTBOX SCRIPT ============ -->
+  <script>
+    (function () {
+      const overlay = document.getElementById('lightbox');
+      const overlayImage = document.getElementById('lightbox-image');
+      const closeBtn = document.getElementById('lightbox-close');
+
+      function openLightbox(src, alt) {
+        overlayImage.src = src;
+        overlayImage.alt = alt || '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden'; // prevent background scroll
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove('is-open');
+        overlayImage.src = '';
+        document.body.style.overflow = '';
+      }
+
+      // Attach click handlers to every image link marked with data-lightbox
+      document.querySelectorAll('[data-lightbox]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const img = link.querySelector('img');
+          if (img) {
+            openLightbox(img.src, img.alt);
+          }
+        });
+      });
+
+      // Close when clicking the overlay background (not the image itself)
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) {
+          closeLightbox();
+        }
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+
+      // Close on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
