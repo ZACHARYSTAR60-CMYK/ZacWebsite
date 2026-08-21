@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Illustration — Zac Wong</title>
+  <title>Zac — Portfolio</title>
   <link rel="stylesheet" href="style.css">
 
   <!-- ============ LIGHTBOX STYLES ============ -->
@@ -53,16 +53,6 @@
     .entry-image-link {
       cursor: zoom-in;
     }
-
-    .page-title {
-      margin-bottom: 0.25em;
-    }
-
-    .page-intro {
-      margin-top: 0;
-      margin-bottom: 2em;
-      opacity: 0.75;
-    }
   </style>
 </head>
 <body>
@@ -76,31 +66,73 @@
     <!-- ============ FEED ============ -->
     <main class="feed" id="work">
 
-      <h1 class="page-title">Blog</h1>
-      <p class="page-intro">Written Work, ideas, and projects.</p>
-
-      <article class="entry" id="studies-illustrations">
+      <article class="entry" id="skull-model">
         <div class="entry-meta">
-          <span class="entry-tag">First Post</span>
+          <a href="3d-modeling.html" class="entry-tag">3D Modeling</a>
           <span class="entry-date">2026</span>
         </div>
-        <h2 class="entry-title">DnD Maps and updates</h2>
+        <h2 class="entry-title">Skull Model</h2>
 
         <div class="entry-gallery">
           <a href="#" class="entry-image-link" data-lightbox>
-            <img src="images/project2.jpg" alt="Maps" class="entry-image">
+            <img src="images/Skull 3D model front view.png" alt="Skull model, front view" class="entry-image">
+          </a>
+          <a href="#" class="entry-image-link" data-lightbox>
+            <img src="images/Skull Side View.png" alt="Skull model, side view" class="entry-image">
+          </a>
+          <a href="#" class="entry-image-link" data-lightbox>
+            <img src="images/Skull Top View.png.png" alt="Skull model, top view" class="entry-image">
           </a>
         </div>
 
-        <p class="entry-caption">Some things I have been working on for my DnD campaign.</p>
+        <p class="entry-caption">A 3D model of a skull, made for a digital sculpting class.</p>
         <p class="entry-description">
-          Maps, drawings, and other cool tidbits from my dungeons and dragons campaign.
+          As part of a digital sculpting class, we were tasked with making a "traditional sculpt." I decided on a skull —
+          after working through Photoshop reference sheets and building the form in ZBrush, I completed the model.
+          Next step is prepping it for 3D printing.
         </p>
       </article>
 
-      <!-- Add more illustration entries here as new <article class="entry"> blocks -->
+      <article class="entry" id="studies-illustrations">
+        <div class="entry-meta">
+          <a href="illustration.html" class="entry-tag">Illustration</a>
+          <span class="entry-date">2026</span>
+        </div>
+        <h2 class="entry-title">Studies and Illustrations</h2>
 
-    </main>
+        <div class="entry-gallery">
+          <a href="#" class="entry-image-link" data-lightbox>
+            <img src="images/project2.jpg" alt="Illustration study" class="entry-image">
+          </a>
+        </div>
+
+        <p class="entry-caption">Short caption for the image above.</p>
+        <p class="entry-description">
+          A brief description of the project — what it is, the tools or techniques used, and what makes it
+          worth showing.
+        </p>
+      </article>
+
+      <article class="entry" id="project-three">
+        <div class="entry-meta">
+          <a href="development.html" class="entry-tag">Development</a>
+          <span class="entry-date">2025</span>
+        </div>
+        <h2 class="entry-title">Title magazine Spreads</h2>
+
+        <div class="entry-gallery">
+          <a href="#" class="entry-image-link" data-lightbox>
+            <img src="images/project3.jpg" alt="Project Three" class="entry-image">
+          </a>
+        </div>
+
+        <p class="entry-caption">Visual spreads developed as a part of title magazine's 10th issue, the Inbetween.</p>
+        <p class="entry-description">
+          A Collection of various multimedia work, charcoal, graphite, and digital illustration that combine to create the feeling of being imbetween two phases of life. 
+          Origional developed from the inbetweens of Animated cells.
+        </p>
+      </article>
+
 
     <!-- ============ SIDEBAR ============ -->
     <aside class="sidebar">
@@ -114,6 +146,31 @@
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
+      <h2 class="entry-title">Artworks Logo practice</h2>
+      <a href="#" class="entry-image-link">
+        <img src="images/ArtworksProject/artworks coffemug.png" alt="Project One" class="entry-image">
+      </a>
+      <p class="entry-caption">Coffemug Rendering logo for school project.</p>
+      <p class="entry-description">
+        A brief description of the project — what it is, the tools or
+        techniques used, and what makes it worth showing.
+      </p>
+    </article>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="entry-tag">Illustration</span>
+        <span class="entry-date">2025</span>
+      </div>
+      <h2 class="entry-title">Homonculus</h2>
+      <a href="#" class="entry-image-link">
+        <img src="images/project2.jpg" alt="Project Two" class="entry-image">
+      </a>
+      <p class="entry-caption">A visual graphic developed during my artworks gallery fellowship.</p>
+      <p class="entry-description">
+        Screenprinted onto silkscreen, then put onto t-shirts and prints. The graphic resembles all the various emotions and people we are to others
+      </p>
+    </article>
 
       <div class="widget">
         <h3 class="widget-title">Connect</h3>
@@ -127,7 +184,7 @@
 
     </aside>
 
-  </div>
+
 
   <!-- ============ FOOTER (shared) ============ -->
   <div id="footer-placeholder"></div>
@@ -149,7 +206,7 @@
         overlayImage.src = src;
         overlayImage.alt = alt || '';
         overlay.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; // prevent background scroll
       }
 
       function closeLightbox() {
@@ -158,6 +215,7 @@
         document.body.style.overflow = '';
       }
 
+      // Attach click handlers to every image link marked with data-lightbox
       document.querySelectorAll('[data-lightbox]').forEach(function (link) {
         link.addEventListener('click', function (e) {
           e.preventDefault();
@@ -168,6 +226,7 @@
         });
       });
 
+      // Close when clicking the overlay background (not the image itself)
       overlay.addEventListener('click', function (e) {
         if (e.target === overlay) {
           closeLightbox();
@@ -176,6 +235,7 @@
 
       closeBtn.addEventListener('click', closeLightbox);
 
+      // Close on Escape key
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
           closeLightbox();
