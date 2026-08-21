@@ -210,6 +210,33 @@ img {
   color: var(--muted);
   margin-top: 20px;
 }
+
+/* ============ SHARED HEADER/FOOTER LOADING (no layout shift) ============ */
+/* Reserve roughly the final height up front so the page doesn't jump when
+   nav.html / footer.html finish loading, then fade the content in. */
+#header-placeholder {
+  min-height: 168px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+#footer-placeholder {
+  min-height: 120px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+#header-placeholder.is-loaded,
+#footer-placeholder.is-loaded {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  #header-placeholder {
+    min-height: 210px;
+  }
+  #footer-placeholder {
+    min-height: 150px;
+  }
+}
 .site-footer .site-nav a {
   border-bottom: none;
 }

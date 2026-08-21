@@ -11,6 +11,11 @@
       })
       .then(function (html) {
         el.innerHTML = html;
+        // Let the browser paint the new content at height 0/opacity 0 first,
+        // then transition it in on the next frame — avoids the "snap" jump.
+        requestAnimationFrame(function () {
+          el.classList.add('is-loaded');
+        });
         if (onLoaded) onLoaded(el);
       })
       .catch(function (err) {
